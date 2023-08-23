@@ -31,6 +31,6 @@
             }
         ]
     },
-    "productName": "electron-demo",
+    "productName": "远程控制",
     "artifactName": "${productName}.${ext}"
 }

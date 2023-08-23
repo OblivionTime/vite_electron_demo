@@ -21,5 +21,9 @@ export default defineConfig({
     server: {
         // 端口
         port: 3000,
-    }
+        https: {
+            cert: "mkcert/server.crt",
+            key: "mkcert/server.key",
+        }
+    },
 })

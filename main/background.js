@@ -1,5 +1,6 @@
 const { app, BrowserWindow } = require('electron')
-const {join}=require('path')
+const { join } = require('path')
+
 // 屏蔽安全警告
 // ectron Security Warning (Insecure Content-Security-Policy)
 process.env['ELECTRON_DISABLE_SECURITY_WARNINGS'] = 'true'
@@ -8,8 +9,10 @@ const createWindow = () => {
     width: 1200,
     useContentSize: true,
     height: 600,
+    autoHideMenuBar: true,
     webPreferences: {
       nodeIntegration: true,
+      enableRemoteModule: true,
       contextIsolation: false
     }
   })
@@ -20,9 +23,18 @@ const createWindow = () => {
     // 开启调试台
     // win.webContents.openDevTools()
   } else {
+    win.setMenu(null)
     win.loadFile(join(__dirname, '../dist/index.html'))
   }
 }
+app.on('certificate-error', (event, webContents, url, error, certificate, callback) => {
+  log('certificate-error');
+  //允许私有证书
+  event.preventDefault()
+  callback(true)
+});
+// 忽略证书相关错误
+app.commandLine.appendSwitch('ignore-certificate-errors')
 app.whenReady().then(() => {
   createWindow()
   app.on('activate', () => {

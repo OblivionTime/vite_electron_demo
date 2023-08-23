@@ -1,10 +1,11 @@
 {
-  "name": "create-vite",
+  "name": "remote",
   "private": true,
   "version": "0.0.0",
   "scripts": {
-    "dev": "vite",
-    "build": "vite build && electron-builder",
+    "dev": "vite --mode=dev",
+    "build": "vite build --mode=pro && electron-builder ",
+    "nginx": "vite build --mode=nginx && electron-builder",
     "preview": "vite preview"
   },
   "main": "./main/background.js",
