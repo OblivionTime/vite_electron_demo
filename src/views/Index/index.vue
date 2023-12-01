@@ -1,16 +1,16 @@
 <template>
-  <div>
-    <router-view></router-view>
-  </div>
+    <div>
+        Index
+        <button @click="ToHome">跳转</button>
+    </div>
 </template>
 
 <script setup>
 import {useRouter} from 'vue-router'
-import {onMounted } from 'vue';
 const router=useRouter()
-onMounted(() => {
-  router.push("/")
-})
+const ToHome=()=>{
+    router.push("/home")
+}
 </script>
 
 <style lang="scss" scoped></style>

@@ -31,6 +31,6 @@
             }
         ]
     },
-    "productName": "远程控制",
+    "productName": "demo",
     "artifactName": "${productName}.${ext}"
 }
