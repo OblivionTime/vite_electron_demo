@@ -29,8 +29,6 @@
     "sass-loader": "^8.0.2",
     "vite": "^4.3.9",
     "vite-plugin-electron": "^0.15.4",
-    "amfe-flexible": "^2.2.1",
-    "postcss-pxtorem": "^6.0.0",
     "unplugin-auto-import": "^0.16.6",
     "unplugin-vue-components": "^0.25.1"
   }
