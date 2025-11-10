@@ -11,7 +11,18 @@
         "createStartMenuShortcut": true,
         "shortcutName": "remote"
     },
-    "files": ["./main","./dist"],
+    "files": [
+        "./main",
+        "./dist",
+        "!**/node_modules/*/{CHANGELOG.md,README.md,README,readme.md,readme}",
+        "!**/node_modules/*/{test,__tests__,tests,powered-test,example,examples}",
+        "!**/node_modules/*.d.ts",
+        "!**/node_modules/.bin",
+        "!**/._*",
+        "!**/{.vscode,.git}",
+        "!**/{LICENSE.md,README.md}",
+        "!**/config"
+    ],
     "compression": "maximum",
     "asar": true,
     "directories": {
@@ -31,6 +42,7 @@
             }
         ]
     },
+    "afterSign": "./script/afterSign.js",
     "productName": "demo",
     "artifactName": "${productName}.${ext}"
 }

@@ -36,6 +36,7 @@ export default defineConfig({
     outDir: "dist",
     assetsDir: "./static",
     reportCompressedSize: false,
+
   },
   resolve: {
     alias: {
